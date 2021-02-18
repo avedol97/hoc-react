@@ -3,10 +3,11 @@ import styles from './ItemsList.module.scss'
 import cx from 'classnames'
 
 const items = [
-    `Lorem ipsum.`,
-    `Lorem ipsum.`,
-    `Lorem ipsum.`,
-    `Lorem ipsum.`,
+    `Docs1`,
+    `Docs2`,
+    `Docs3`,
+    `Docs4`,
+    `Docs5`,
 ];
 
 class ItemsList extends Component {
@@ -31,7 +32,7 @@ class ItemsList extends Component {
                 <button onClick={this.toggle} className="button is-dark is-large">Collapse</button>
                 <ul className={listClass}>
                     {items.map(item => (
-                        <li className="notification is-primary">
+                        <li className="notification is-link">
                             {item}
                         </li>
                     ))}
