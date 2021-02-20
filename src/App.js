@@ -20,9 +20,6 @@ function App() {
                 <Route path="/Patterns" exact component={Patterns}/>
                 <Route path="/Components" exact component={Components}/>
             </div>
-            <div className={styles.box}>
-                <ItemsList/>
-            </div>
         </div>
         </Router>
     );

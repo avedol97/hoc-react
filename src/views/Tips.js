@@ -1,8 +1,12 @@
 import React from "react";
+import Columns from "../components/Columns/Columns";
 
 const Tips = () => {
     return(
-        <div>Tips</div>
-    )
+        <div>
+            <h2 className="title is-3">Tips</h2>
+        <Columns/>
+        </div>
+    );
 }
 export default Tips;
