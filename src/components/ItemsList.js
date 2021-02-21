@@ -1,6 +1,7 @@
 import React, {Component} from "react";
 import styles from './ItemsList.module.scss'
 import cx from 'classnames'
+import withCollapse from "../hoc/withCollapse";
 
 const items = [
     `Docs1`,
@@ -11,25 +12,16 @@ const items = [
 ];
 
 class ItemsList extends Component {
-    state = {
-        isCollapsed: false,
-    }
-
-    toggle = () => {
-        this.setState(prevstate => ({
-            isCollapsed: !prevstate.isCollapsed,
-        }));
-
-    };
 
     render() {
-        const listClass = cx(styles.list,{
-            [styles.isCollapsed]: this.state.isCollapsed,
+        const {isCollapsed, toggle} = this.props;
+        const listClass = cx(styles.list, {
+            [styles.isCollapsed]: isCollapsed,
         });
 
         return (
             <div>
-                <button onClick={this.toggle} className="button is-dark is-large">Collapse</button>
+                <button onClick={toggle} className="button is-dark is-large">Collapse</button>
                 <ul className={listClass}>
                     {items.map(item => (
                         <li className="notification is-link">
@@ -44,4 +36,4 @@ class ItemsList extends Component {
 }
 
 
-export default ItemsList;
+export default withCollapse(ItemsList);
